@@ -43,7 +43,7 @@ jobs:
       - name: Setup Rust Cache
         uses: Swatinem/rust-cache@v2
       - name: Install musl-tools on Linux
-        run: sudo apt-get update --yes && sudo apt-get install --yes musl-tools
+        run: sudo apt-get update --yes && sudo apt-get install --yes musl-tools libssl-dev pkg-config
         if: contains(matrix.platform.os, 'ubuntu')
       - name: Build binary (*nix)
         shell: bash
