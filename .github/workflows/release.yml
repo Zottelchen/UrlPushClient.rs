@@ -18,11 +18,11 @@ jobs:
             name: urlpushclient-Linux-x86_64-musl.tar.gz
             cargo_command: cargo
 
-          - os_name: Windows-aarch64
+          - os_name: Windows-x86_64
             os: windows-latest
-            target: aarch64-pc-windows-msvc
+            target: x86_64-pc-windows-msvc
             bin: urlpushclient.exe
-            name: urlpushclient-Windows-aarch64.zip
+            name: urlpushclient-Windows-x86_64.zip
             cargo_command: cargo
 
           - os_name: macOS-x86_64
@@ -79,5 +79,4 @@ jobs:
         with:
           draft: true
           files: "urlpushclient*"
-          body_path: Changes.md
         if: startsWith( github.ref, 'refs/tags/v' )
